@@ -6,13 +6,13 @@ package graph
 
 import (
 	"context"
-	"fmt"
+	"gqlgen-server/graph/handlers"
 	"gqlgen-server/graph/model"
 )
 
 // GetPlayers is the resolver for the getPlayers field.
 func (r *queryResolver) GetPlayers(ctx context.Context) ([]*model.Player, error) {
-	panic(fmt.Errorf("not implemented: GetPlayers - getPlayers"))
+	return handlers.GetPlayers(), nil
 }
 
 // Query returns QueryResolver implementation.
