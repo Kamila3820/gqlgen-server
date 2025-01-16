@@ -36,3 +36,22 @@ var players = []*model.Player{
 func GetPlayers() []*model.Player {
 	return players
 }
+
+func CreatePlayer(req *model.NewPlayer) *model.Player {
+	new := &model.Player{
+		ID:    "PLAYER-003",
+		Name:  req.Name,
+		Level: 1,
+		Class: &req.Class,
+		Item: []*model.Item{
+			{
+				ID:   "ITEM-000",
+				Name: "Stick",
+			},
+		},
+	}
+
+	players = append(players, new)
+
+	return new
+}

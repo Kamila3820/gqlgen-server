@@ -20,3 +20,12 @@ type Item {
 type Query {
   getPlayers: [Player!]!
 }
+
+input NewPlayer {
+  name: String!
+  class: PlayerClass!
+}
+
+type Mutation {
+  createPlayer(req: NewPlayer!): Player!
+}
